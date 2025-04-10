@@ -134,87 +134,74 @@ function setCorsHeaders(headers) {
 // 返回根目录的 HTML
 function getRootHtml() {
   return `<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-  <title>Proxy Everything</title>
-  <link rel="icon" type="image/png" href="https://img.icons8.com/color/1000/kawaii-bread-1.png">
-  <meta name="Description" content="Proxy Everything with CF Workers.">
-  <meta property="og:description" content="Proxy Everything with CF Workers.">
-  <meta property="og:image" content="https://img.icons8.com/color/1000/kawaii-bread-1.png">
-  <meta name="robots" content="index, follow">
-  <meta http-equiv="Content-Language" content="zh-CN">
-  <meta name="copyright" content="Copyright © ymyuuu">
-  <meta name="author" content="ymyuuu">
-  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://img.icons8.com/color/1000/kawaii-bread-1.png">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-  <style>
-      body, html {
-          height: 100%;
-          margin: 0;
+  <html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>GlobalProxy 免责声明</title>
+    <meta name="description" content="GlobalProxy 免责声明">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f9f9f9;
       }
-      .background {
-          background-image: url('https://imgapi.cn/bing.php');
-          background-size: cover;
-          background-position: center;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
       }
-      .card {
-          background-color: rgba(255, 255, 255, 0.8);
-          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
-      .card:hover {
-          background-color: rgba(255, 255, 255, 1);
-          box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+      p {
+        margin-bottom: 15px;
+        text-align: justify;
       }
-      .input-field input[type=text] {
-          color: #2c3e50;
+      .disclaimer-title {
+        font-weight: bold;
+        margin-top: 20px;
       }
-      .input-field input[type=text]:focus+label {
-          color: #2c3e50 !important;
+      .highlight {
+        color: #e74c3c; /* 红色 */
+        font-weight: bold;
       }
-      .input-field input[type=text]:focus {
-          border-bottom: 1px solid #2c3e50 !important;
-          box-shadow: 0 1px 0 0 #2c3e50 !important;
-      }
-  </style>
-</head>
-<body>
-  <div class="background">
-      <div class="container">
-          <div class="row">
-              <div class="col s12 m8 offset-m2 l6 offset-l3">
-                  <div class="card">
-                      <div class="card-content">
-                          <span class="card-title center-align"><i class="material-icons left">link</i>Proxy Everything</span>
-                          <form id="urlForm" onsubmit="redirectToProxy(event)">
-                              <div class="input-field">
-                                  <input type="text" id="targetUrl" placeholder="在此输入目标地址" required>
-                                  <label for="targetUrl">目标地址</label>
-                              </div>
-                              <button type="submit" class="btn waves-effect waves-light teal darken-2 full-width">跳转</button>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script>
-      function redirectToProxy(event) {
-          event.preventDefault();
-          const targetUrl = document.getElementById('targetUrl').value.trim();
-          const currentOrigin = window.location.origin;
-          window.open(currentOrigin + '/' + encodeURIComponent(targetUrl), '_blank');
-      }
-  </script>
-</body>
-</html>`;
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>免责声明</h1>
+
+      <p>请使用以下格式访问 API：<span class="highlight">https://url.yh-iot.cloudns.org/目标地址</span>。 其中，目标地址 是您想要访问的网址，请确保目标地址是有效的 URL 格式<p>
+
+
+      <p>本服务仅面向非大陆地区用户，大陆地区用户在使用本服务时需自行承担因法律法规限制可能带来的风险。</p>
+      <p>GlobalProxy 作为服务提供者并不对其服务中包含的任何内容的准确性、完整性或合法性做出保证。用户应对服务中的信息进行验证和判断。</p>
+      <p>GlobalProxy 的服务可能受到外部因素的影响，包括但不限于网络故障、服务器故障等。服务提供者不对由这些因素导致的服务中断或故障负责。</p>
+      <p>使用 GlobalProxy 代理服务涉及用户与第三方网站的交互，用户应自行承担与这些网站交互所带来的一切风险。</p>
+      <p>GlobalProxy 代理服务不提供任何明示或暗示的担保，包括但不限于服务的适用性、准确性、可靠性、完整性。</p>
+      <p>用户在使用 GlobalProxy 代理服务时应遵守所有适用的法律和法规，包括但不限于知识产权、隐私权、信息安全等方面的法规。</p>
+      <p>服务提供者不对用户使用 GlobalProxy 代理服务可能引发的任何法律责任负责，包括但不限于因侵犯第三方权益而导致的法律纠纷。</p>
+      <p>GlobalProxy 代理服务可能会记录用户的部分信息，用于改善服务质量和确保服务安全。然而，服务提供者将尽最大努力保护用户的隐私。</p>
+      <p>服务提供者保留在没有提前通知的情况下随时修改、暂停或终止 GlobalProxy 服务的权利。</p>
+      <p>GlobalProxy 代理服务可能会访问和处理用户的请求，但不保证对所有请求均能提供成功的响应。</p>
+      <p class="disclaimer-title">本免责声明的任何更改将通过本页面发布，用户应定期查看以获取最新信息。</p>
+      <p>本免责声明的效力范围将覆盖代理服务的所有用户，包括但不限于匿名用户。</p>
+      <p>代理服务可能包含第三方提供的服务或链接，服务提供者对这些服务或链接不承担责任。</p>
+      <p>在适用法律允许的范围内，服务提供者对代理服务的所有方面不提供任何明示或暗示的担保。</p>
+      <p>对于因不可抗力、自然灾害等不可控因素导致的服务中断或故障，服务提供者不承担责任。</p>
+      <p>代理服务可能受到技术限制，可能无法支持所有类型的请求和内容。</p>
+      <p>用户在使用代理服务时，应保持合理谨慎，自行承担风险，对于因使用代理服务而导致的一切后果负责。</p>
+      <p>如果您对本免责声明有任何疑问，请邮件联系。将尽全力为您提供必要的协助和解释。</p>
+      <p class="disclaimer-title">在使用本服务前务必审慎阅读并理解本免责声明的全部内容，使用本服务将被视为对本免责声明的接受和遵守。</p>
+    </div>
+  </body>
+  </html>`;
 }
